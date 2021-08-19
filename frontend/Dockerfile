@@ -6,6 +6,9 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY . .
+RUN chown -Rh $user:$user /app
+USER $user
+
 RUN npm run build
 
 FROM nginx

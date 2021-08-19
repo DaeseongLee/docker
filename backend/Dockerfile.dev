@@ -11,4 +11,8 @@ RUN npm install
 
 COPY . .
 
+RUN chown -Rh $user:$user /app
+USER $user
+
+
 CMD ["npm", "run", "dev"]
