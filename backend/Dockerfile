@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . .
 
-RUN chown -Rh $user:$user /app
+RUN chown -R $user:$user /app
 USER $user
 
 CMD ["npm", "run", "start"]
