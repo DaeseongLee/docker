@@ -38,7 +38,7 @@ services:
     container_name: app_mysql
     ports:
       - "3306:3306"
-    privileged: true
+    user: root
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql
       - ./mysql/sqls/:/docker-entrypoint-initdb.d/
