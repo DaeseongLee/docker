@@ -36,6 +36,8 @@ services:
     build: ./mysql
     restart: unless-stopped
     container_name: app_mysql
+    exporse:
+      - "3306"
     ports:
       - "3306:3306"
     volumes:
@@ -44,3 +46,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: johnahn
       MYSQL_DATABASE: myapp
+      MYSQL_USER: root
+      MYSQL_PASSWORD: johnahn
