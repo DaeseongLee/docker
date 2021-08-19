@@ -48,3 +48,4 @@ services:
       MYSQL_DATABASE: myapp
       MYSQL_USER: root
       MYSQL_PASSWORD: johnahn
+      MYSQL_ROOT_HOST: "%"
