@@ -42,7 +42,6 @@ services:
       - "3306:3306"
     volumes:
       - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-      #- ./mysql/mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: johnahn
       MYSQL_PASSWORD: johnahn
