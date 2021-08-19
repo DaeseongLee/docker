@@ -35,6 +35,6 @@ services:
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql
       - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-    environmet:
+    environment:
       MYSQL_ROOT_PASSWORD: lee
       MYSQL_DATABASE: myapp
