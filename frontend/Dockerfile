@@ -6,8 +6,8 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY . .
-RUN chown -R $user:$user /app
-USER $user
+RUN chown -R node /app
+USER node
 
 RUN npm run build
 
