@@ -32,17 +32,17 @@ services:
       MYSQL_DATABASE: myapp
       MYSQL_PORT: 3306
 
-  mysql:
-    build: ./mysql
-    restart: unless-stopped
-    container_name: app_mysql
-    expose:
-      - "3306"
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-    environment:
-      MYSQL_ROOT_PASSWORD: johnahn
-      MYSQL_PASSWORD: johnahn
-      MYSQL_ROOT_HOST: "%"
+  # mysql:
+  #   build: ./mysql
+  #   restart: unless-stopped
+  #   container_name: app_mysql
+  #   expose:
+  #     - "3306"
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - ./mysql/sqls/:/docker-entrypoint-initdb.d/
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: johnahn
+  #     MYSQL_PASSWORD: johnahn
+  #     MYSQL_ROOT_HOST: "%"

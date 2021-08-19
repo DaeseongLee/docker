@@ -1,0 +1,23 @@
+language: generic
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t yds5539/react-test-app -f ./frontend/Dockerfile.dev ./frontend
+
+script:
+  - docker run -e CI=true yds5539/react-test-app npm run test
+
+atter_success:
+  - docker build -t yds5539/docker-frontend ./frontend
+  - docker build -t yds5539/docker-backend ./backend
+  - docker build -t yds5539/docker-nginx ./nginx
+
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+  - docker push yds5539/docker-frontend
+  - docker push yds5539/docker-backend
+  - docker push yds5539/docker-nginx
