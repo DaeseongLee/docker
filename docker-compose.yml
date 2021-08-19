@@ -16,6 +16,7 @@ services:
       context: ./nginx
     ports:
       - "3000:80"
+      - "3306:3306"
 
   backend:
     build:
@@ -38,7 +39,6 @@ services:
     container_name: app_mysql
     ports:
       - "3306:3306"
-    user: root
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql
       - ./mysql/sqls/:/docker-entrypoint-initdb.d/
